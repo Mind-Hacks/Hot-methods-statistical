@@ -69,7 +69,7 @@ public class AspectUtil {
         return result;
     }
 
-    public void entrance() {
+    public void entrance() {//线程A将User，分别放入三个不同的容器
         try {
             User InvokeUser = queue.take();
             dataHandleOut.DataHandle(InvokeUser, minuteInvokeCostTime, InvokeUser.getBeginTime(), 0);
