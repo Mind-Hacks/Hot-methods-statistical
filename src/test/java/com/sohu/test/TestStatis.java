@@ -47,9 +47,9 @@ public class TestStatis {
             @Override
             public void run() {
                 while(true){
-                    System.out.println("每隔0.1秒，输出一次");
+                    System.out.println("每隔1秒，输出一次");
                     try {
-                        Thread.currentThread().sleep(100);
+                        Thread.currentThread().sleep(1000);
                         dataHandleOut.HandAndPut(aspectUtil.getMinuteInvokeCostTime());
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
@@ -59,6 +59,38 @@ public class TestStatis {
             }
         }.start();
         //输出结果、
+
+        new Thread(){
+            @Override
+            public void run() {
+                while(true){
+                    System.out.println("每隔一小时，输出一次");
+                    try {
+                        Thread.currentThread().sleep(1000*60);
+                        dataHandleOut.HandAndPut(aspectUtil.getHourInvokeCostTime());
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }.start();
+
+        new Thread(){
+            @Override
+            public void run() {
+                while(true){
+                    System.out.println("每隔一小时，输出一次");
+                    try {
+                        Thread.currentThread().sleep(1000*60*24);
+                        dataHandleOut.HandAndPut(aspectUtil.getHourInvokeCostTime());
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }.start();
 
         while(true){
             daoMethod.method1();
