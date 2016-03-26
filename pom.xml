@@ -99,12 +99,8 @@
     <!-- 配置仓库 -->
 	<repositories>
 		<repository>
-			<id>sohuNexus</id>
-			<url>http://dev.hd.sohu.com.cn/nexus/content/groups/public</url>
-		</repository>
-		<repository>
-			<id>sohuNexus-3rdparty</id>
-			<url>http://dev.hd.sohu.com.cn/nexus/content/repositories/3rdparty</url>
+			<id>XXX</id>
+			<url>XXX</url>
 		</repository>
 	</repositories>
 </project>
